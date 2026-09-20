@@ -1,0 +1,26 @@
+name: 'BidGlow Launch Kit'
+description: 'Prepare website launch copy without publishing a listing or charging money.'
+author: 'BidGlow'
+branding:
+  icon: 'external-link'
+  color: 'green'
+inputs:
+  url:
+    description: 'Public website URL. Never provide credentials, query parameters or private links.'
+    required: true
+outputs:
+  copy:
+    description: 'Public launch draft. Review before sharing.'
+    value: ${{ steps.kit.outputs.copy }}
+  kit-url:
+    description: 'Open the interactive editor to create a PNG and localized templates.'
+    value: 'https://bidglow.ai/launch-kit'
+runs:
+  using: 'composite'
+  steps:
+    - id: kit
+      shell: bash
+      env:
+        BIDGLOW_PUBLIC_URL: ${{ inputs.url }}
+        BIDGLOW_ACTION_PATH: ${{ github.action_path }}
+      run: node "$BIDGLOW_ACTION_PATH/run.mjs"
