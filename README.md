@@ -1,4 +1,10 @@
-# BidGlow Launch Kit
+# BidGlow Launch Kit — retired integration
+
+**Status: retired.** BidGlow removed the draft/Launch Kit workflow on October 8, 2026. The instructions below describe the historical action, not the current publishing API. Do not install this action for new integrations.
+
+Official website: [BidGlow](https://bidglow.ai/). Current AI publishing and payment contract: [developers](https://bidglow.ai/developers), [capabilities](https://bidglow.ai/api/v1/agent/capabilities), [OpenAPI](https://bidglow.ai/openapi.json).
+
+## Historical action (unsupported)
 
 Prepare a public website introduction in a GitHub workflow. No account, card,
 publication or payment. This first-party action calls BidGlow's public metadata
@@ -31,9 +37,8 @@ The endpoint is rate-limited and may reject inaccessible or disallowed websites.
 It creates only short-lived rate-limit counters, not a stored launch kit. Data is
 read from the supplied public website; no model service is used.
 
-Use https://bidglow.ai/launch-kit for an editable PNG card and translated templates.
+The former /launch-kit page and draft workflow are retired; use the current developer documentation linked above.
 Website copy stays in its original language. Use your own AI to review/translate it.
-Free publication is a separate explicitly approved flow; every paid bid needs
-human-confirmed payment. No traffic, search rank or AI recommendation is guaranteed.
+Current free publication and optional paid placement are separate workflows. Stripe Checkout requires customer confirmation; authorized external wallets can use the current Base USDC order API. This retired action does neither. No traffic, search rank or AI recommendation is guaranteed.
 
 Support: admin@bidglow.ai. Maintainer: Blessbridge Global Trading LLC.
